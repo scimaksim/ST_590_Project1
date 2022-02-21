@@ -17413,10 +17413,12 @@ $$<p>Our goal is to estimate the values of $b_{0}$ and $b_{1}$ that minimize $\s
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Now we are ready to create a gradient descent function that incorporates a predictor variable, <code>get_gd_slr_coeffs()</code>.</p>
-<p>This function starts with user specified SLR parameters, <code>cur_b0</code> and <code>cur_b1</code> and does the following: 
-1) Estimate the value of the derivative of RMSE in the direction of $b_{0}$ and adjust $b_{0}$ based on that value. If the value of the derivative is positive, $b_{0}$ becomes slightly smaller. If it is negative, $b_{0}$ becomes slightly bigger. 
-2) Estimate the value of the derivative of RMSE in the direction of $b_{1}$ and adjust $b_{1}$ based on that value. If the value of the derivative is positive, $b_{1}$ becomes slightly smaller. If it is negative, $b_{1}$ becomes slightly bigger. 
-3) Repeat steps 1 and 2 until the adjustments made to $b_{0}$ and $b_{1}$ taken together become very small or a user specified maximum number of iterations is reached.</p>
+<p>This function starts with user specified SLR parameters, <code>cur_b0</code> and <code>cur_b1</code> and does the following:</p>
+<ol>
+<li>Estimate the value of the derivative of RMSE in the direction of $b_{0}$ and adjust $b_{0}$ based on that value. If the value of the derivative is positive, $b_{0}$ becomes slightly smaller. If it is negative, $b_{0}$ becomes slightly bigger. </li>
+<li>Estimate the value of the derivative of RMSE in the direction of $b_{1}$ and adjust $b_{1}$ based on that value. If the value of the derivative is positive, $b_{1}$ becomes slightly smaller. If it is negative, $b_{1}$ becomes slightly bigger. </li>
+<li>Repeat steps 1 and 2 until the adjustments made to $b_{0}$ and $b_{1}$ taken together become very small or a user specified maximum number of iterations is reached. </li>
+</ol>
 
 </div>
 </div>
