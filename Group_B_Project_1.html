@@ -14656,9 +14656,9 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>A preview of the data set is included for reference. Additionally, the following packages are used to read, summarize, and visualize the data:</p>
+<p>A preview of the data set is included below for reference. Additionally, the following packages are used to read, summarize, and visualize the data:</p>
 <ul>
-<li><a href="https://pandas.pydata.org/">pandas</a> - a "fast, powerful, flexible and easy to use open source data analysis and manipulation tool" that provides support for DataFrames and the <code>.read_csv()</code> method for ingestinv CSV files.</li>
+<li><a href="https://pandas.pydata.org/">pandas</a> - a "fast, powerful, flexible and easy to use open source data analysis and manipulation tool" that provides support for DataFrames and the <code>.read_csv()</code> method for ingesting CSV files.</li>
 <li><a href="https://matplotlib.org/">matplotlib</a> - a "comprehensive library for creating static, animated, and interactive visualizations in Python" that includes the <code>.pyplot</code> interface for creating scatter plots, box and whisker plots, bar plots, and other graphics.</li>
 <li><a href="https://numpy.org/">numpy</a> - the "fundamental package for scientific computing with Python" with support for arrays, array manipulation, and mathematical summary methods.</li>
 <li><a href="https://scipy.org/">scipy</a> - provides "fundamental algorithms for scientific computing in Python" and includes the <code>.stats</code> module for statistical functions. <code>scipy.stats.linregress</code> is used to corroborate the output of the linear least-squares regression of our user-defined functions.</li>
@@ -15247,7 +15247,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>There is a general increase in the median selling price between 2005 and 2020. This increase can be visualized with the line plot below. The data set includes information on only 3 sales in 2020, and the minimum selling price of 175000 (nearly double the median in 2019) results in a spike in the plot.</p>
+<p>There is a general increase in the median selling price between 2005 and 2020. This increase can be visualized with the line plot below. In 2020, the data set includes information on only 3 sales, and the minimum selling price of 175000 (nearly double the median in 2019) results in a spike in the plot.</p>
 
 </div>
 </div>
@@ -15861,7 +15861,7 @@ jp-needs-light-background
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>There is a weak linear relationship between <code>selling_price</code> and <code>km_driven</code>. A basic trend line yields a y-intercept of 67,618.1 and a slope of -0.23. It is clear that that relationship will get stronger if we remove the outliers. Let's see what happens when bikes with greater than 200,000 km are removed.</p>
+<p>There is a weak linear relationship between <code>selling_price</code> and <code>km_driven</code>. A basic trend line, based on least-squares estimates, yields a y-intercept of 67,618.1 and a slope of -0.23. We will use these values as the basis for our estimates of $b_0$ and $b_1$ in section 3.1. It is clear that that relationship will get stronger if we remove the outliers. Let's see what happens when bikes with greater than 200,000 km are removed.</p>
 
 </div>
 </div>
@@ -16778,7 +16778,7 @@ $$<p>may be drawn. Here, $c_{i}$ is our prediction, $b_{0}$ is the y-intercept, 
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Based on our scatter plot analysis of the relationship between <code>selling_price</code> (our $y$ variable) and <code>km_driven</code> (our $x$ variable), a reasonable range for $b_0$ is $60,000$ to $70,000$, and a reasonable range for $b_1$ is $-0.20$ to $-0.30$. We can use these values as reference points for our $b_0$ and $b_1$ value grids, respectively, to help us reduce computation time.</p>
+<p>Recall that, in section 2.2, we used the <code>scipy.stats.linregress</code> method to draw a trend line in the scatter plot of the relationship between <code>selling_price</code> (our $y$ variable) and <code>km_driven</code> (our $x$ variable). From this trend line, we find that a reasonable range for $b_0$ is $60,000$ to $70,000$, and a reasonable range for $b_1$ is $-0.20$ to $-0.30$. We can use these values as reference points for our $b_0$ and $b_1$ value grids, respectively, to help us reduce computation time.</p>
 
 </div>
 </div>
@@ -17687,7 +17687,7 @@ $$<p>Our goal is to estimate the values of $b_{0}$ and $b_{1}$ that minimize $\s
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[101]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_gd_slr_coeffs</span><span class="p">(</span><span class="n">cur_b0</span><span class="p">,</span> <span class="n">cur_b1</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">max_iterations</span><span class="p">,</span> <span class="n">delta0</span> <span class="o">=</span> <span class="mf">.005</span><span class="p">,</span> <span class="n">delta1</span> <span class="o">=</span> <span class="mf">.0000001</span><span class="p">,</span> 
@@ -17696,11 +17696,13 @@ $$<p>Our goal is to estimate the values of $b_{0}$ and $b_{1}$ that minimize $\s
 <span class="sd">    Takes</span>
 <span class="sd">        cur_b0, cur_b1: initial values of SLR parameters </span>
 <span class="sd">        delta0, delta1: used to estimate the derivative of RMSE at b0, b1</span>
+<span class="sd">        x: a numeric vector of predictors </span>
+<span class="sd">        y: a numeric vector of observations of the target variable</span>
+<span class="sd">        max_iterations: how long you want the algorithm to run</span>
 <span class="sd">        step_size_b0, step_size_b1: determine how far the updated parameters</span>
 <span class="sd">            are from the original parameters</span>
 <span class="sd">        num_tol: determines how close the prediction needs to be to the </span>
 <span class="sd">            prediction that minimizes RMSE</span>
-<span class="sd">        max_iterations: how long you want the algorithm to run</span>
 <span class="sd">    Returns a dictionary containing </span>
 <span class="sd">        estimated b0, b1</span>
 <span class="sd">        the number of iterations that ran (so you know whether the algorithm</span>
@@ -17899,7 +17901,7 @@ Iterations: 2,000
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>This time, <code>get_gd_slr_coeffs()</code> returned an estimate of $b_{0}$ that is smaller than the starting value and an estimate of $b_{1}$ that is larger than the starting value. That tells us that the best value for $b_{0}$ is between $60,000$ $70,000$, and the best value for $b_{1}$ is between $0$ and $-0.5$ By playing around a little bit, we can home in on a good values for the parameters.</p>
+<p>This time, <code>get_gd_slr_coeffs()</code> returned an estimate of $b_{0}$ that is smaller than the starting value and an estimate of $b_{1}$ that is larger than the starting value. That tells us that the best value for $b_{0}$ is between $60,000$ and $70,000$, and the best value for $b_{1}$ is between $0$ and $-0.5$ By playing around a little bit, we can home in on a good values for the parameters.</p>
 
 </div>
 </div>
